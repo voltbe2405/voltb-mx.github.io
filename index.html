@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>volt mx | Guía de Trámites de México</title>
+
+<meta name="description"
+content="Consulta requisitos y fuentes oficiales para realizar trámites en México.">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#071a33,#0b4f71);
+    color:white;
+    padding:25px 7%;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1250px;
+    margin:auto;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#4fd1c5;
+}
+
+.nav-links{
+    display:flex;
+    gap:20px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,#0b4f71,#0b7285);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:clamp(35px,6vw,65px);
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:19px;
+    max-width:700px;
+    margin:auto;
+    line-height:1.6;
+}
+
+.search-box{
+    max-width:700px;
+    margin:30px auto 0;
+    display:flex;
+}
+
+.search-box input{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:10px 0 0 10px;
+    font-size:16px;
+    outline:none;
+}
+
+.search-box button{
+    border:none;
+    background:#19b394;
+    color:white;
+    padding:0 25px;
+    border-radius:0 10px 10px 0;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* CATEGORIAS */
+
+.categories{
+    max-width:1200px;
+    margin:35px auto;
+    padding:0 20px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.category{
+    border:1px solid #dce3eb;
+    background:white;
+    padding:10px 18px;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+.category:hover,
+.category.active{
+    background:#0b7285;
+    color:white;
+}
+
+/* CONTENEDOR */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+.section-title{
+    margin-bottom:25px;
+}
+
+.section-title h2{
+    font-size:32px;
+}
+
+.section-title p{
+    color:#687386;
+    margin-top:8px;
+}
+
+/* CARDS */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    border:1px solid #e1e7ef;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,.10);
+}
+
+.icon{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.badge{
+    display:inline-block;
+    background:#e7f7f4;
+    color:#087f6c;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#657084;
+    line-height:1.5;
+}
+
+.details{
+    margin-top:18px;
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#0b4f71;
+    color:white;
+    border-radius:9px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    z-index:1000;
+    overflow-y:auto;
+    padding:30px 15px;
+}
+
+.modal-content{
+    background:white;
+    max-width:750px;
+    margin:auto;
+    border-radius:20px;
+    padding:30px;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.modal h2{
+    margin-bottom:10px;
+    padding-right:35px;
+}
+
+.modal-info{
+    margin:20px 0;
+    padding:15px;
+    background:#f1f6f9;
+    border-radius:10px;
+}
+
+.modal ul{
+    margin:15px 0 20px 25px;
+}
+
+.modal li{
+    margin-bottom:10px;
+    line-height:1.5;
+}
+
+.official{
+    display:inline-block;
+    background:#0b7285;
+    color:white;
+    padding:13px 18px;
+    border-radius:8px;
+    text-decoration:none;
+    margin-top:10px;
+}
+
+/* INFO */
+
+.notice{
+    max-width:1100px;
+    margin:50px auto;
+    background:#fff9e6;
+    border-left:5px solid #e5a700;
+    padding:25px;
+    border-radius:10px;
+    line-height:1.6;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:60px;
+    background:#071a33;
+    color:white;
+    padding:40px 20px;
+    text-align:center;
+}
+
+footer p{
+    max-width:700px;
+    margin:10px auto;
+    color:#b8c4d3;
+}
+
+.footer-links{
+    margin-top:20px;
+}
+
+.footer-links a{
+    color:#65d6c5;
+    margin:0 8px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:600px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-links{
+        font-size:14px;
+    }
+
+    .hero{
+        padding:60px 15px;
+    }
+
+    .search-box{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .search-box input,
+    .search-box button{
+        border-radius:10px;
+        padding:16px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+voltb<span>MX</span>
+</div>
+
+<div class="nav-links">
+<a href="#tramites">Trámites</a>
+<a href="#fuentes">Fuentes oficiales</a>
+</div>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>Todos tus trámites, en un solo lugar</h1>
+
+<p>
+Consulta qué documentos necesitas, dónde realizar tu trámite
+y accede directamente a la información oficial de la autoridad.
+</p>
+
+<div class="search-box">
+
+<input
+type="text"
+id="search"
+placeholder="Buscar trámite...">
+
+<button onclick="buscar()">Buscar</button>
+
+</div>
+
+</section>
+
+
+<div class="categories">
+
+<button class="category active"
+onclick="filtrar('Todos')">
+Todos
+</button>
+
+<button class="category"
+onclick="filtrar('Identidad')">
+Identidad
+</button>
+
+<button class="category"
+onclick="filtrar('Militar')">
+Servicio Militar
+</button>
+
+<button class="category"
+onclick="filtrar('Fiscal')">
+Fiscal
+</button>
+
+<button class="category"
+onclick="filtrar('Salud')">
+Salud
+</button>
+
+<button class="category"
+onclick="filtrar('Civil')">
+Registro Civil
+</button>
+
+<button class="category"
+onclick="filtrar('Electoral')">
+Electoral
+</button>
+
+</div>
+
+
+<main class="container" id="tramites">
+
+<div class="section-title">
+
+<h2>Trámites principales</h2>
+
+<p>
+Información basada en fuentes oficiales consultadas.
+</p>
+
+</div>
+
+<div class="grid" id="grid"></div>
+
+</main>
+
+
+<div class="notice">
+
+<strong>⚠️ Importante</strong>
+
+<p>
+Los requisitos, costos, horarios, citas y lugares de atención
+pueden cambiar. Esta página funciona como guía informativa.
+Antes de acudir, verifica siempre la información directamente
+en el sitio oficial de la dependencia correspondiente.
+</p>
+
+</div>
+
+
+<section class="container" id="fuentes">
+
+<div class="section-title">
+
+<h2>Fuentes oficiales</h2>
+
+<p>
+Consulta directamente a las instituciones responsables.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Gobierno de México</h3>
+
+<p>
+Portal oficial de trámites y servicios federales.
+</p>
+
+<a class="official"
+href="https://www.gob.mx/"
+target="_blank">
+Visitar sitio oficial
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>INE</h3>
+
+<p>
+Información oficial sobre la Credencial para Votar.
+</p>
+
+<a class="official"
+href="https://ine.mx/credencial/"
+target="_blank">
+Visitar INE
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>SAT</h3>
+
+<p>
+Información oficial de RFC y obligaciones fiscales.
+</p>
+
+<a class="official"
+href="https://www.sat.gob.mx/"
+target="_blank">
+Visitar SAT
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>IMSS</h3>
+
+<p>
+Información oficial sobre trámites y servicios de seguridad social.
+</p>
+
+<a class="official"
+href="https://www.imss.gob.mx/"
+target="_blank">
+Visitar IMSS
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<h2>TrámiteMX</h2>
+
+<p>
+Una guía informativa para ayudarte a encontrar los documentos
+y las fuentes oficiales necesarias para realizar trámites en México.
+</p>
+
+<div class="footer-links">
+
+<a href="https://www.gob.mx/" target="_blank">
+Gob.mx
+</a>
+
+<a href="https://ine.mx/" target="_blank">
+INE
+</a>
+
+<a href="https://www.sat.gob.mx/" target="_blank">
+SAT
+</a>
+
+<a href="https://www.imss.gob.mx/" target="_blank">
+IMSS
+</a>
+
+</div>
+
+</footer>
+
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="cerrar()">
+&times;
+</span>
+
+<h2 id="modalTitle"></h2>
+
+<div class="modal-info">
+
+<strong>Dependencia:</strong>
+<span id="modalAgency"></span>
+
+<br><br>
+
+<strong>Categoría:</strong>
+<span id="modalCategory"></span>
+
+</div>
+
+<h3>Documentos / requisitos</h3>
+
+<ul id="modalRequirements"></ul>
+
+<h3>Información importante</h3>
+
+<p id="modalExtra"></p>
+
+<a
+id="modalLink"
+class="official"
+target="_blank">
+Consultar fuente oficial
+</a>
+
+</div>
+
+</div>
+
+
+<script>
+
+/*
+====================================================
+BASE DE DATOS DE TRÁMITES
+====================================================
+
+La información se basa en fuentes oficiales.
+No se deben agregar requisitos inventados.
+
+====================================================
+*/
+
+const tramites = [
+
+{
+id:1,
+nombre:"Consulta e impresión de CURP",
+categoria:"Identidad",
+icon:"🪪",
+dependencia:"Secretaría de Gobernación / RENAPO",
+
+descripcion:
+"Consulta y descarga tu constancia de CURP.",
+
+requisitos:[
+"No se requiere presentar un documento.",
+"Debes proporcionar tu CURP o tus datos personales.",
+"Los datos pueden incluir nombre, fecha de nacimiento, sexo y entidad de nacimiento."
+],
+
+extra:
+"El trámite de consulta e impresión de CURP es gratuito y puede realizarse en línea.",
+
+link:"https://www.gob.mx/curp/"
+},
+
+{
+id:2,
+nombre:"Copia certificada del acta de nacimiento",
+categoria:"Civil",
+icon:"📜",
+dependencia:"Registro Nacional de Población / Registro Civil",
+
+descripcion:
+"Obtén una copia certificada de tu acta de nacimiento.",
+
+requisitos:[
+"CURP o datos registrales.",
+"Nombre completo.",
+"Fecha de nacimiento.",
+"Entidad de registro.",
+"Sexo.",
+"Datos de filiación."
+],
+
+extra:
+"El costo depende de la entidad federativa donde se realizó el registro.",
+
+link:"https://www.gob.mx/actas/"
+},
+
+{
+id:3,
+nombre:"Cartilla de Identidad del Servicio Militar Nacional",
+categoria:"Militar",
+icon:"🎖️",
+dependencia:"Secretaría de la Defensa Nacional",
+
+descripcion:
+"Obtención de la Cartilla de Identidad del Servicio Militar Nacional.",
+
+requisitos:[
+"Acta de nacimiento certificada y copia.",
+"Comprobante de domicilio vigente y copia.",
+"Comprobante del grado máximo de estudios y copia.",
+"CURP y copia.",
+"Cuatro fotografías recientes de 35 × 45 mm con las características establecidas por SEDENA."
+],
+
+extra:
+"El trámite se realiza ante la Junta Municipal o Alcaldía de Reclutamiento correspondiente. SEDENA señala como periodo de alistamiento del 2 de enero al 15 de octubre. El trámite es gratuito.",
+
+link:"https://www.gob.mx/defensa/acciones-y-programas/cuales-son-los-requisitos-para-tramitar-la-cartilla-de-identidad-del-servicio-militar"
+},
+
+{
+id:4,
+nombre:"Reposición de Cartilla Militar",
+categoria:"Militar",
+icon:"📘",
+dependencia:"Secretaría de la Defensa Nacional",
+
+descripcion:
+"Reposición de la Cartilla de Identidad del Servicio Militar Nacional.",
+
+requisitos:[
+"Acta de nacimiento original y copia.",
+"Identificación oficial vigente con fotografía y copia.",
+"CURP y copia.",
+"Copia de la cartilla, si se cuenta con ella, o número de matrícula."
+],
+
+extra:
+"SEDENA indica que el trámite requiere acudir a una Oficina de Reclutamiento de Zona Militar o al módulo correspondiente en Ciudad de México.",
+
+link:"https://www.gob.mx/defensa/documentos/renueva-tu-cartilla-del-s-m-n"
+},
+
+{
+id:5,
+nombre:"Resello de Cartilla Militar",
+categoria:"Militar",
+icon:"📗",
+dependencia:"Secretaría de la Defensa Nacional",
+
+descripcion:
+"Trámite de resello de la Cartilla de Identidad del Servicio Militar Nacional.",
+
+requisitos:[
+"Acta de nacimiento original y copia.",
+"CURP original y copia.",
+"Cartilla del Servicio Militar Nacional liberada original y copia.",
+"Formato Universal para trámites del Servicio Militar Nacional."
+],
+
+extra:
+"SEDENA señala que no tiene costo y que no es necesaria una cita.",
+
+link:"https://www.gob.mx/defensa/documentos/resella-tu-cartilla-del-s-m-n"
+},
+
+{
+id:6,
+nombre:"Credencial para Votar (INE)",
+categoria:"Electoral",
+icon:"🗳️",
+dependencia:"Instituto Nacional Electoral",
+
+descripcion:
+"Solicita por primera vez, actualiza o repone tu Credencial para Votar.",
+
+requisitos:[
+"Documento que acredite la nacionalidad mexicana.",
+"Identificación con fotografía.",
+"Comprobante de domicilio.",
+"Los documentos deben presentarse en original y sin tachaduras ni enmendaduras."
+],
+
+extra:
+"El INE indica que debes acudir al módulo correspondiente y que se requiere cita para la atención.",
+
+link:"https://ine.mx/credencial/credencial-proceso/"
+},
+
+{
+id:7,
+nombre:"Inscripción al RFC",
+categoria:"Fiscal",
+icon:"💼",
+dependencia:"Servicio de Administración Tributaria (SAT)",
+
+descripcion:
+"Inscripción de una persona física en el Registro Federal de Contribuyentes.",
+
+requisitos:[
+"CURP o documento que corresponda según la situación de la persona.",
+"Para ciertos casos se requiere comprobante de domicilio.",
+"Identificación oficial vigente cuando corresponda.",
+"Los requisitos cambian según la situación fiscal del solicitante."
+],
+
+extra:
+"Para personas físicas, el SAT establece reglas específicas según edad y situación. La inscripción ordinaria de persona física es gratuita.",
+
+link:"https://wwwmat.sat.gob.mx/tramites/82714/realiza-tu-inscripcion-en-el-rfc-persona-fisica"
+},
+
+{
+id:8,
+nombre:"Número de Seguridad Social (NSS)",
+categoria:"Salud",
+icon:"🏥",
+dependencia:"Instituto Mexicano del Seguro Social",
+
+descripcion:
+"Obtén o localiza tu Número de Seguridad Social.",
+
+requisitos:[
+"CURP.",
+"Correo electrónico válido.",
+"Para trámite presencial: acta de nacimiento.",
+"Identificación oficial vigente.",
+"CURP original."
+],
+
+extra:
+"El IMSS permite realizar la asignación o localización del NSS por internet y el trámite es gratuito.",
+
+link:"https://www.imss.gob.mx/node/1403"
+},
+
+{
+id:9,
+nombre:"Acta de matrimonio",
+categoria:"Civil",
+icon:"💍",
+dependencia:"Registro Civil",
+
+descripcion:
+"Consulta información sobre la obtención de actas de matrimonio.",
+
+requisitos:[
+"Los requisitos dependen de la entidad y del tipo de trámite.",
+"Consulta la plataforma oficial del Registro Civil."
+],
+
+extra:
+"La Plataforma Nacional del Registro Civil ofrece servicios relacionados con actas digitales y trámites del estado civil.",
+
+link:"https://www.gob.mx/actas/"
+},
+
+{
+id:10,
+nombre:"Acta de defunción",
+categoria:"Civil",
+icon:"📄",
+dependencia:"Registro Civil",
+
+descripcion:
+"Consulta información relacionada con actas de defunción.",
+
+requisitos:[
+"Los requisitos dependen de la entidad federativa.",
+"Consulta la plataforma oficial del Registro Civil."
+],
+
+extra:
+"La Plataforma Nacional del Registro Civil cuenta con servicios relacionados con actas digitales.",
+
+link:"https://www.gob.mx/actas/"
+},
+
+{
+id:11,
+nombre:"Pasaporte mexicano",
+categoria:"Identidad",
+icon:"🛂",
+dependencia:"Secretaría de Relaciones Exteriores",
+
+descripcion:
+"Consulta los requisitos oficiales para solicitar un pasaporte mexicano.",
+
+requisitos:[
+"La documentación depende de si se trata de una persona menor o mayor de edad.",
+"Se debe acreditar la nacionalidad mexicana.",
+"Se debe acreditar la identidad.",
+"Debe realizarse el procedimiento establecido por la SRE y contar con cita cuando corresponda."
+],
+
+extra:
+"Los requisitos específicos dependen de la edad y modalidad del trámite. Verifica directamente la ficha oficial de la SRE antes de acudir.",
+
+link:"https://www.gob.mx/sre/acciones-y-programas/pasaporte-mexicano"
+},
+
+{
+id:12,
+nombre:"Corrección de CURP",
+categoria:"Identidad",
+icon:"✏️",
+dependencia:"Secretaría de Gobernación / RENAPO",
+
+descripcion:
+"Consulta información para corregir datos incorrectos de la CURP.",
+
+requisitos:[
+"Los documentos dependen del tipo de corrección.",
+"Puede ser necesario presentar documentación probatoria de identidad."
+],
+
+extra:
+"Cuando existe un error en la CURP, debe seguirse el procedimiento establecido por RENAPO.",
+
+link:"https://www.gob.mx/curp/"
+},
+
+{
+id:13,
+nombre:"Corrección de acta de nacimiento",
+categoria:"Civil",
+icon:"📝",
+dependencia:"Registro Civil",
+
+descripcion:
+"Consulta el procedimiento para solicitar correcciones en un acta.",
+
+requisitos:[
+"Acta de nacimiento.",
+"CURP cuando corresponda.",
+"Documentación que pruebe la corrección solicitada."
+],
+
+extra:
+"El procedimiento y el tiempo de resolución dependen de la entidad federativa donde se encuentre el registro.",
+
+link:"https://www.gob.mx/actas/"
+}
+
+];
+
+
+/* MOSTRAR TRÁMITES */
+
+function mostrar(lista){
+
+const grid =
+document.getElementById("grid");
+
+grid.innerHTML="";
+
+if(lista.length===0){
+
+grid.innerHTML=`
+<div class="card">
+<h3>No encontramos el trámite</h3>
+<p>
+Intenta buscar con otro nombre.
+</p>
+</div>
+`;
+
+return;
+
+}
+
+lista.forEach(tramite=>{
+
+const card=document.createElement("div");
+
+card.className="card";
+
+card.innerHTML=`
+
+<div class="icon">
+${tramite.icon}
+</div>
+
+<span class="badge">
+${tramite.categoria}
+</span>
+
+<h3>
+${tramite.nombre}
+</h3>
+
+<p>
+${tramite.descripcion}
+</p>
+
+<button
+class="details"
+onclick="abrir(${tramite.id})">
+
+Ver requisitos
+
+</button>
+
+`;
+
+grid.appendChild(card);
+
+});
+
+}
+
+
+/* ABRIR MODAL */
+
+function abrir(id){
+
+const tramite =
+tramites.find(t=>t.id===id);
+
+document.getElementById("modalTitle")
+.textContent=tramite.nombre;
+
+document.getElementById("modalAgency")
+.textContent=tramite.dependencia;
+
+document.getElementById("modalCategory")
+.textContent=tramite.categoria;
+
+const requirements =
+document.getElementById("modalRequirements");
+
+requirements.innerHTML="";
+
+tramite.requisitos.forEach(req=>{
+
+const li=document.createElement("li");
+
+li.textContent=req;
+
+requirements.appendChild(li);
+
+});
+
+document.getElementById("modalExtra")
+.textContent=tramite.extra;
+
+document.getElementById("modalLink")
+.href=tramite.link;
+
+document.getElementById("modal")
+.style.display="block";
+
+}
+
+
+/* CERRAR */
+
+function cerrar(){
+
+document.getElementById("modal")
+.style.display="none";
+
+}
+
+
+/* CERRAR AL HACER CLICK FUERA */
+
+window.onclick=function(event){
+
+const modal=
+document.getElementById("modal");
+
+if(event.target===modal){
+
+cerrar();
+
+}
+
+};
+
+
+/* FILTRO */
+
+function filtrar(categoria){
+
+const botones=
+document.querySelectorAll(".category");
+
+botones.forEach(btn=>{
+btn.classList.remove("active");
+});
+
+event.target.classList.add("active");
+
+if(categoria==="Todos"){
+
+mostrar(tramites);
+
+}else{
+
+mostrar(
+tramites.filter(
+t=>t.categoria===categoria
+)
+);
+
+}
+
+}
+
+
+/* BUSCADOR */
+
+function buscar(){
+
+const texto=
+document.getElementById("search")
+.value
+.toLowerCase()
+.trim();
+
+const resultados=
+tramites.filter(t=>
+
+t.nombre.toLowerCase().includes(texto) ||
+
+t.categoria.toLowerCase().includes(texto) ||
+
+t.dependencia.toLowerCase().includes(texto)
+
+);
+
+mostrar(resultados);
+
+}
+
+
+/* BUSCAR AUTOMÁTICAMENTE */
+
+document
+.getElementById("search")
+.addEventListener("input",buscar);
+
+
+/* INICIALIZAR */
+
+mostrar(tramites);
+
+</script>
+
+</body>
+</html>
